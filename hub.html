@@ -14,19 +14,19 @@
     <title>Life Happens</title>
 </head>
 
-<body>
+<body class="px-5 pt-2 pb-5">
     <header>
-        <div class="columns">
+        <div class="columns mb-0">
             <div class="column"></div>
             <div class="column"></div>
             <div class="column is-one-third welcome-msg">
-                <i>icon</i>
+                <i class="mr-2">icon</i>
                 <p>Welcome Jessica</p>
             </div>
         </div>
-        <div class="columns">
-            <div class="column is-one-third daily-weather">
-                <i>icon</i>
+        <div class="columns ">
+            <div class="column daily-weather">
+                <i class="mr-2">icon</i>
                 <p>
                     Seattle<br>
                     Sunny - 64 F
@@ -34,29 +34,37 @@
             </div>
             <div class="column"></div>
             <div class="column is-one-third date-time">
-                <p>Wednesday, June 16</p>
-                <p>9:21AM</p>
+                <p>Today is Wednesday, June 16, 2021</p>
+                <p><span class="time-text-size">9:21 AM</span></p>
             </div>
         </div>
-
+        <div class="columns mb-5">
+            <div class="column is-one-third">
+                Weather forecast
+            </div>
+            <div class="column"></div>
+            <div class="column"></div>
+        </div>
     </header>
-    <div class="columns">
-        <div class="column is-one-third">
-            weather other regions
-        </div>
-        <div class="column is-one-third">
-            To-do List
-        </div>
-        <div class="column is-one-third stock-news">
-            <div>
-                Stock
+
+    <main>
+        <div class="columns" style="height: 500px;">
+            <div class="column is-one-third box m-2">
+                Regional Weather
             </div>
-            <div>
-                News
+            <div class="column box m-2">
+                To-Do List
             </div>
-            
+            <div class="column stock-news p-0">
+                <div class="box m-2" style="height: 30%;">
+                    Stock
+                </div>
+                <div class="box m-2" style="height: 70%;">
+                    News
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
