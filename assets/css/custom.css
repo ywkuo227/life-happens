@@ -1,12 +1,10 @@
 body {
+    font-weight: 800;
+    font-size: larger;
     color: #fff;
     background-image: url("../img/placeholder_hi-res.jpg");
     background-size: cover;
     opacity: 90%;
-}
-
-i {
-    margin-right: 5px;
 }
 
 .welcome-msg {
@@ -24,7 +22,17 @@ i {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    white-space: nowrap;
 }
+
+.time-text-size {
+    font-size: 36px;
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
 .stock-news {
     display: flex;
     flex-direction: column;
