@@ -37,3 +37,11 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
