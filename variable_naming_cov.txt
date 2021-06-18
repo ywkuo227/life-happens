@@ -17,7 +17,7 @@ var aryUserInfo = {
     ],
     "savedToDo": [
         (saved to-dos)
-    ],
+    ]
 }
 
 //These are the var for date and time
