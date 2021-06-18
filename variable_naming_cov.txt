@@ -1,0 +1,27 @@
+
+
+
+//This is the array which will pass into Local Storage.
+var aryUserInfo = {
+    "userName": {
+    "firstName":
+    "lastName":
+    },
+    "location": {
+        "city":
+        "latitude":
+        "longtitude":
+    },
+    "savedWeather": [
+        (cityName)
+    ],
+    "savedToDo": [
+        (saved to-dos)
+    ],
+}
+
+//These are the var for date and time
+var dateEl
+var timeEl
+
+//for the welcome page, will use user info above
