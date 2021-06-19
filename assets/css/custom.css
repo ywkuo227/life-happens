@@ -7,6 +7,93 @@ body {
     opacity: 90%;
 }
 
+/*Todo Styles*/
+/*Element Selectors*/
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,
+form button {
+    padding: 0.2em;
+    font-size: 1.5rem;
+    border: solid 1.5px cadetblue;
+    background:bottom;
+}
+ul button {
+    background:bottom;
+    border: solid 1.5px cadetblue;
+    font-size: 1rem;
+    padding: 0.2rem;
+}
+form button:hover {
+    background:cadetblue;
+}
+
+input {
+    border-radius: 8px 0 0 8px;
+    width: 70%;
+}
+/*Class Selectors*/
+.todo-button{
+    border-radius: 0px 8px 8px 0px;
+    cursor:pointer;
+   
+}
+.complete-button {
+    cursor:pointer;
+
+}
+
+.trash-button {
+    cursor: pointer;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+width: 80%;
+}
+
+.todo {
+    margin: 1rem;
+    padding: 0.2rem;
+    background: bottom;
+    border: solid 1.5px cadetblue;
+    display: flex;
+    transition: all 0.3s ease;
+    justify-content: space-betweens;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.todo li {
+    flex:1;
+}
+.todo-item {
+    padding: 0 8px;
+}
+
+/*.fa-trash,.fa-check {
+    pointer-events: none;
+}*/
+
+.completed {
+    opacity: 50%;
+    text-decoration:line-through;
+
+}
+
+
+
+/*Todo Styling Ends Here*/
+
 .welcome-msg {
     display: flex;
     flex-direction: row;
@@ -36,4 +123,12 @@ body {
 .stock-news {
     display: flex;
     flex-direction: column;
+}
+
+.login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

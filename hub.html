@@ -26,7 +26,9 @@
         </div>
         <div class="columns ">
             <div class="column daily-weather">
-                <i class="mr-2">icon</i>
+                <i class="">
+                    <img src="https://openweathermap.org/img/w/01d.png" height="65px" width="65px" alt="">
+                </i>
                 <p>
                     Seattle<br>
                     Sunny - 64 F
@@ -34,8 +36,8 @@
             </div>
             <div class="column"></div>
             <div class="column is-one-third date-time">
-                <p>Today is Wednesday, June 16, 2021</p>
-                <p><span class="time-text-size">9:21 AM</span></p>
+                <p class="date">Today is </p>
+                <p><span class="time-text-size time"></span></p>
             </div>
         </div>
         <div class="columns mb-5">
@@ -52,8 +54,29 @@
             <div class="column is-one-third box m-2">
                 Regional Weather
             </div>
-            <div class="column box m-2">
-                To-Do List
+            <!--To-do List Codes-->
+            <div class=" todo-div column box m-2">
+                <div>Todo List</div>
+                <form>
+                    <input type="text" class="todo-input ">
+                    <button type="submit" class="todo-button">
+                        <i class="fas fa-plus-square"></i>
+                    </button>
+<!--
+                    <div class="select">
+                        <select name="todos" class="select-todos">
+                            <option value="total">List all</option>
+                            <option value="done">List Done</option>
+                            <option value="in-progress">List In Progress</option>
+                        </select>
+                    </div>
+                -->
+                </form>
+                <!--Elements created in Js goes in <div> below-->
+                <div class="todo-container">
+                    <ul class="todo-list"></ul>
+                </div>
+
             </div>
             <div class="column stock-news p-0">
                 <div class="box m-2" style="height: 30%;">
@@ -76,6 +99,9 @@
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/news.js"> </script>
+    <script src="./assets/js/DateTime.js"></script>
+    <!--Todo js-->
+    <script src="./assets/js/todo.js"></script>
 </body>
 
 </html>
