@@ -26,11 +26,20 @@
         </div>
         <div class="columns ">
             <div class="column daily-weather">
-                <i class="mr-2">icon</i>
-                <p>
+                <i>
+                    <img src="https://openweathermap.org/img/w/01d.png" height="65px" width="65px" alt="">
+                </i>
+                <div class="mr-4">
                     Seattle<br>
                     Sunny - 64 F
-                </p>
+                </div>
+                <div class="mr-4">
+                    Wind:<br>
+                    Humidity:
+                </div>
+                <div>
+                    UV Index:
+                </div>
             </div>
             <div class="column"></div>
             <div class="column is-one-third date-time">
@@ -51,16 +60,20 @@
         <div class="columns" style="height: 500px;">
             <div class="column is-one-third box m-2">
                 Regional Weather
+                <div>
+                <input class="input" type="text" placeholder="Seattle">
+                <i class="fas fa-plus-square"></i>
+                </div>
             </div>
             <!--To-do List Codes-->
-            <div class=" todo column box m-2">
+            <div class=" todo-div column box m-2">
                 <div>Todo List</div>
                 <form>
-                    <input type="text" class="todo-input">
+                    <input type="text" class="todo-input ">
                     <button type="submit" class="todo-button">
                         <i class="fas fa-plus-square"></i>
                     </button>
-
+<!--
                     <div class="select">
                         <select name="todos" class="select-todos">
                             <option value="total">List all</option>
@@ -68,9 +81,12 @@
                             <option value="in-progress">List In Progress</option>
                         </select>
                     </div>
+                -->
                 </form>
                 <!--Elements created in Js goes in <div> below-->
-                <div class="todo-container"></div>
+                <div class="todo-container">
+                    <ul class="todo-list"></ul>
+                </div>
 
             </div>
             <div class="column stock-news p-0">
@@ -79,6 +95,9 @@
                 </div>
                 <div class="box m-2" style="height: 70%;">
                     News
+                    <input id=headlines class="box m-2" style="height: 1%;" style="height: 60%;" placeholder="Article Title"><button> Search</button></input>
+                    
+                    
                 </div>
             </div>
         </div>
@@ -90,7 +109,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/news.js"> </script>
     <script src="./assets/js/DateTime.js"></script>
+    <!--Todo js-->
+    <script src="./assets/js/todo.js"></script>
 </body>
 
 </html>
