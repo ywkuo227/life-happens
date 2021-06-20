@@ -1,27 +1,30 @@
-//timeEl = document.querySelector(".time");
-//dateEl = document.querySelector(".date");
-timeEl = $(".time");
-dateEl = $(".date");
-editInfoBttn = $(".editInfoBttn");
-//editInfoBttn = document.querySelector("editInfoBttn");
-submitUserInfo = $(".submitUserInfo");
-form = $(".userInfo");
+var timeEl = $(".time");
+var dateEl = $(".date");
+var editInfoBttn = $(".editInfoBttn");
+var submitUserInfo = $(".submitUserInfo");
+var form = $(".userInfo");
 
-// var aryUserInfo = [
-//     firstName,
-//     lastName,
-//     city,
-//     latitude,
-//     longitude,
-// ]
+var firstNameEl = $('input[name="firstName"]');
+var lastNameEl = $('input[name="lastName"]');
+var cityEl = $('input[name="city"]');
 
-
-// "savedWeather": [
-//     (cityName)
-// ],
-// "savedToDo": [
-//     (saved-to-dos)
-// ]
+var aryUserInfo = {
+    userName: {
+    firstName: "",
+    lastName: ""
+    },
+    location: {
+        city: "",
+        latitude: "",
+        longtitude: ""
+    },
+    savedWeather: [
+        //(cityName)
+    ],
+    savedToDo: [
+        //(saved to-dos)
+    ]
+}
 
 
 
@@ -41,12 +44,14 @@ function editInfo(){
 }
 
 function saveUserInfo(event){
-     event.preventDefault();
-     console.log("you click submit")
-//     //var = input.value
-//     //stringify
-//     //store
-//     //refresh?
+    //event.preventDefault();
+    aryUserInfo.userName.firstName = firstNameEl.val();
+    aryUserInfo.userName.lastName = lastNameEl.val();
+    aryUserInfo.location.city = cityEl.val();
+    console.log(aryUserInfo);
+    // stringify
+    // store
+    // refresh?
 };
 
 setDateTime();
