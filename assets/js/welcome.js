@@ -1,27 +1,30 @@
-//timeEl = document.querySelector(".time");
-//dateEl = document.querySelector(".date");
-timeEl = $(".time");
-dateEl = $(".date");
-editInfoBttn = $(".editInfoBttn");
-//editInfoBttn = document.querySelector("editInfoBttn");
-submitUserInfo = $(".submitUserInfo");
-form = $(".userInfo");
+var timeEl = $(".time");
+var dateEl = $(".date");
+var editInfoBttn = $(".editInfoBttn");
+var submitUserInfo = $(".submitUserInfo");
+var form = $(".userInfo");
 
-// var aryUserInfo = [
-//     firstName,
-//     lastName,
-//     city,
-//     latitude,
-//     longitude,
-// ]
+var firstNameEl = $('input[name="firstName"]');
+var lastNameEl = $('input[name="lastName"]');
+var cityEl = $('input[name="city"]');
 
-
-// "savedWeather": [
-//     (cityName)
-// ],
-// "savedToDo": [
-//     (saved-to-dos)
-// ]
+var aryUserInfo = {
+    userName: {
+    firstName: "",
+    lastName: ""
+    },
+    location: {
+        city: "",
+        latitude: "",
+        longtitude: ""
+    },
+    savedWeather: [
+        //(cityName)
+    ],
+    savedToDo: [
+        //(saved to-dos)
+    ]
+}
 
 
 
@@ -33,25 +36,26 @@ function setDateTime() {
         timeEl.text(time);
     }, 1000);
 };
-
 function editInfo(){
     console.log("you click edit user info");
     //display: block
-    //form.css("display: block");
+    console.log(form);
+    form.css("display","block");
 }
 
-// function saveUserInfo(event){
-//     event.preventDefault();
-//     //var = input.value
-//     //stringify
-//     //store
-//     //refresh?
-// };
+function saveUserInfo(event){
+    //event.preventDefault();
+    aryUserInfo.userName.firstName = firstNameEl.val();
+    aryUserInfo.userName.lastName = lastNameEl.val();
+    aryUserInfo.location.city = cityEl.val();
+    console.log(aryUserInfo);
+    // stringify
+    // store
+    // refresh?
+};
 
 setDateTime();
 
-editInfoBttn.on('click', (event) => {
-    event.preventDefault();
-    editInfo();
-});
-//submitUserInfo.on("click", saveUserInfo());
+console.log(editInfoBttn)
+editInfoBttn.on('click', editInfo);
+submitUserInfo.on('click', saveUserInfo);
