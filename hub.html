@@ -25,116 +25,17 @@
             </div>
         </div>
         <div class="columns">
-            <div class="column daily-weather">
-                <i>
-                    <img src="https://openweathermap.org/img/w/01d.png" height="100px" width="100px" alt="">
-                </i>
-                <div>
-                    <div>
-                        Seattle
-                    </div>
-                    <div class="daily-weather-sub">
-                        <div class="mr-5">
-                            Sunny - 64°F<br>
-                            Wind: 15 MPH
-                        </div>
-                        <div>
-                            UV Index: 1.01<br>
-                            Humidity: 10%
-                        </div>
-                    </div>
-                </div>
-                <div class="column"></div>
-                <div class="column is-one-third date-time">
-                    <p class="date">Today is </p>
-                    <p><span class="time-text-size time"></span></p>
-                </div>
+            <div id="dispDailyWeather" class="column daily-weather"></div>
+            <div class="column"></div>
+            <div class="column is-one-third date-time">
+                <p class="date">Today is </p>
+                <p><span class="time-text-size time"></span></p>
             </div>
+        </div>
         </div>
         <div class="columns mb-5">
             <div class="column is-one-third">
-                <div class="weekForecast">
-                    <!-- Main forecast placeholder -->
-                    <div class="forecastContent">
-                        <div>
-                            Sun
-                        </div>
-                        <i>
-                            <img src="https://openweathermap.org/img/w/01d.png" alt="">
-                        </i>
-                        <div>
-                            74°F
-                        </div>
-                    </div>
-                    <!-- POC forecast placeholder -->
-                    <div class="forecastContent">
-                        <div>
-                            Mon
-                        </div>
-                        <i>
-                            <img src="https://openweathermap.org/img/w/01d.png" alt="">
-                        </i>
-                        <div>
-                            74°F
-                        </div>
-                    </div>
-                    <div class="forecastContent">
-                        <div>
-                            Tues
-                        </div>
-                        <i>
-                            <img src="https://openweathermap.org/img/w/01d.png" alt="">
-                        </i>
-                        <div>
-                            74°F
-                        </div>
-                    </div>
-                    <div class="forecastContent">
-                        <div>
-                            Wed
-                        </div>
-                        <i>
-                            <img src="https://openweathermap.org/img/w/01d.png" alt="">
-                        </i>
-                        <div>
-                            74°F
-                        </div>
-                    </div>
-                    <div class="forecastContent">
-                        <div>
-                            Thur
-                        </div>
-                        <i>
-                            <img src="https://openweathermap.org/img/w/01d.png" alt="">
-                        </i>
-                        <div>
-                            74°F
-                        </div>
-                    </div>
-                    <div class="forecastContent">
-                        <div>
-                            Fri
-                        </div>
-                        <i>
-                            <img src="https://openweathermap.org/img/w/01d.png" alt="">
-                        </i>
-                        <div>
-                            74°F
-                        </div>
-                    </div>
-                    <div class="forecastContent">
-                        <div>
-                            Sat
-                        </div>
-                        <i>
-                            <img src="https://openweathermap.org/img/w/01d.png" alt="">
-                        </i>
-                        <div>
-                            74°F
-                        </div>
-                    </div>
-                    <!-- End of POC -->
-                </div>
+                <div id="weekForecast" class="is-flex is-flex-direction-row is-justify-content-space-around"></div>
             </div>
             <div class="column"></div>
             <div class="column"></div>
@@ -142,7 +43,7 @@
     </header>
 
     <main>
-        <div class="columns" style="height: 500px;">
+        <div class="columns">
             <div class="column is-one-third box m-2">
                 Regional Weather
                 <div class="field">
@@ -153,28 +54,7 @@
                         </span>
                     </p>
                 </div>
-                <div class="mt-2">
-                    <!-- Regional weather entries -->
-                    <div class="daily-weather">
-                        <i>
-                            <img src="https://openweathermap.org/img/w/01d.png" height="100px" width="100px" alt="">
-                        </i>
-                        <div>
-                            <div>
-                                Seattle
-                            </div>
-                            <div class="daily-weather-sub">
-                                <div class="mr-5">
-                                    Sunny - 64°F<br>
-                                    Wind: 15 MPH
-                                </div>
-                                <div>
-                                    UV Index: 1.01<br>
-                                    Humidity: 10%
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="interestedWeather" class="mt-2 full-height scrollbox">
                 </div>
             </div>
             <!--To-do List Codes-->
@@ -222,8 +102,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/weather/rsc.js"></script>
     <script src="./assets/js/news.js"> </script>
     <script src="./assets/js/DateTime.js"></script>
+    <!-- Weather JS -->
+    <script src="./assets/js/weather/queryGen.js"></script>
+    <script src="./assets/js/weather/weather.js"></script>
     <!--Todo js-->
     <script src="./assets/js/todo.js"></script>
 </body>

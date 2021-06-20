@@ -1,4 +1,9 @@
+html {
+    height: 100vh;
+}
+
 body {
+    min-height: 100vh;
     font-weight: 800;
     font-size: larger;
     color: #fff;
@@ -100,20 +105,35 @@ width: 80%;
     justify-content: flex-end;
 }
 
-.daily-weather {
-    display: flex;
-    flex-direction: row;
+.weather-icon {
+    text-align: center;
 }
 
-.daily-weather-sub {
-    display: flex;
-    flex-direction: row;
+.uvi {
+    border-radius: 3px;
 }
 
-.weekForecast {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+/* UVI bg color */
+.uvi-low {
+    background-color: rgba(0, 131, 1, 0.8);
+}
+
+.uvi-medium {
+    background-color: rgba(253, 255, 0, 0.8);
+    color: black;
+}
+
+.uvi-high {
+    background-color: rgba(255, 161, 0, 0.8);
+    color: black;
+}
+
+.uvi-very-high {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.uvi-extreme {
+    background-color: rgba(141, 0, 132, 0.8);
 }
 
 .forecastContent {
@@ -131,13 +151,16 @@ width: 80%;
     font-size: 36px;
 }
 
+.full-height {
+    height: calc(100vh - 448px);
+}
+
 .box {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-.box-forecast {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.4);
+.scrollbox {
+    overflow: auto;
 }
 
 .stock-news {
