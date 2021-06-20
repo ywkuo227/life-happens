@@ -33,25 +33,24 @@ function setDateTime() {
         timeEl.text(time);
     }, 1000);
 };
-
 function editInfo(){
     console.log("you click edit user info");
     //display: block
-    //form.css("display: block");
+    console.log(form);
+    form.css("display","block");
 }
 
-// function saveUserInfo(event){
-//     event.preventDefault();
+function saveUserInfo(event){
+     event.preventDefault();
+     console.log("you click submit")
 //     //var = input.value
 //     //stringify
 //     //store
 //     //refresh?
-// };
+};
 
 setDateTime();
 
-editInfoBttn.on('click', (event) => {
-    event.preventDefault();
-    editInfo();
-});
-//submitUserInfo.on("click", saveUserInfo());
+console.log(editInfoBttn)
+editInfoBttn.on('click', editInfo);
+submitUserInfo.on('click', saveUserInfo);

@@ -145,21 +145,12 @@ width: 80%;
     flex-direction: column;
 }
 
-/* Megan will address this */
- /* main{
-    display: flex;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
- } */
-
  .login{
      display: flex;
      flex-direction: column;
      justify-content: center;
-    align-items: center;
+     align-items: center;
+     height: 100vh;
  }
 
 .userInfo {
