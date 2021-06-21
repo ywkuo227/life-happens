@@ -7,6 +7,7 @@ var todoListEl = document.querySelector(".todo-list");
 todoButtonEl.addEventListener("click", addTodos);
 todoListEl.addEventListener("click", deleteItem);
 
+var savedToDo = [];
 
 //Functions
 function addTodos(event){
@@ -23,7 +24,7 @@ function addTodos(event){
 
     
     var completedButton = document.createElement("button");
-    completedButton.innerHTML = '<i class= "fas fa-check-square"></i>';
+    completedButton.innerHTML = '<i class= "fa fa-check-square"></i>';
     completedButton.classList.add("complete-button");
     todoDivEl.appendChild(completedButton);
 
@@ -33,6 +34,7 @@ function addTodos(event){
     todoDivEl.appendChild(trashButton);
 
     todoInputEl.value = "";
+    saveLocalTodos(newTodoEl.textContent);
 
 
 }
@@ -41,13 +43,27 @@ function addTodos(event){
 function deleteItem(event) {
 
     var item = event.target;
-    if(item.classList[0] === "trash-button") {
+    
+    if(item.classList[0] === "trash-button" || item.classList[0] === "fas"  ) {
         var todo = item.parentElement;
+        todo.parentElement.remove();
         todo.remove();
     }
-    if(item.classList[0] === "complete-button"){
+    if(item.classList[0] === "complete-button" || item.classList[0] === "fa" ){
      var todo = item.parentElement;
+     var iParent = todo.parentElement;
      todo.classList.toggle("completed");
+     iParent.classList.toggle("completed");
+
     }
+
+}
+
+
+
+function saveLocalTodos(todo){
+    
+    savedToDo.push(todo);
+    localStorage.setItem("savedToDo",JSON.stringify(savedToDo));
 
 }
