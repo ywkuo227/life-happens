@@ -24,12 +24,12 @@ form input,
 form button {
     padding: 0.2em;
     font-size: 1.5rem;
-    border: solid 1.5px cadetblue;
-    background:bottom;
+    border: solid 0.5px white;
+    background-color: white;
 }
 ul button {
     background:bottom;
-    border: solid 1.5px cadetblue;
+    border: solid 0.0px rgb(139, 115, 115);
     font-size: 1rem;
     padding: 0.2rem;
 }
@@ -38,12 +38,12 @@ form button:hover {
 }
 
 input {
-    border-radius: 8px 0 0 8px;
+    border-radius: 2px 0 0 2px;
     width: 70%;
 }
 /*Class Selectors*/
 .todo-button{
-    border-radius: 0px 8px 8px 0px;
+    border-radius: 0px 2px 2px 0px;
     cursor:pointer;
    
 }
@@ -70,12 +70,13 @@ width: 80%;
     margin: 1rem;
     padding: 0.2rem;
     background: bottom;
-    border: solid 1.5px cadetblue;
+    border: solid 1px cadetblue;
+    background-color: white;
     display: flex;
     transition: all 0.3s ease;
     justify-content: space-betweens;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 2px;
 }
 
 .todo li {
@@ -181,4 +182,8 @@ width: 80%;
     position: absolute;
     left: 50px;
     width: 30%;
+}
+
+.fa-plus-square:before {
+    opacity: 20%;
 }
