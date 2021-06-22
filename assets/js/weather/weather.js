@@ -116,9 +116,9 @@ function displayRegionalWeather() {
                         $("#interestedWeather").append(`
                             <div class="columns mx-1">
                                 <i class="column weather-icon">
-                                    <img src="${genIconURL(weatherData.weather[0].icon)}" height="100px" width="100px" alt="${weatherData.weather[0].description}">
+                                    <img src="${genIconURL(weatherData.weather[0].icon)}" height="75px" width="75px" alt="${weatherData.weather[0].description}">
                                 </i>
-                                <div class="column is-three-fifths">
+                                <div class="column is-8">
                                     <div class="columns">
                                         <div class="column is-full">
                                             ${weatherData.name}
@@ -135,8 +135,8 @@ function displayRegionalWeather() {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="column is-flex is-justify-content-center is-align-items-center">
-                                <button id="delLocBtn" class="button is-text">
+                                <div class="column is-1 is-flex is-justify-content-center is-align-items-center">
+                                <button class="button is-text delLocBtn" value="${weatherData.name}">
                                     <span class="icon is-small">
                                     <i class="fas fa-minus-square"></i>
                                     </span>
@@ -157,11 +157,11 @@ function pgInitialize() {
 
 pgInitialize();
 
-setInterval(()=> {
+setInterval(() => {
     pgInitialize();
 }, 300000);
 
-$("#addLocBtn").on("click", (event) => {
+$("#addLocBtn").on("click", () => {
     aryUserInfo.savedWeather.unshift($("#inputSearchLoc").val());
     if (aryUserInfo.savedWeather.length > 6) {
         aryUserInfo.savedWeather.length = 6
@@ -170,4 +170,11 @@ $("#addLocBtn").on("click", (event) => {
     localStorage.setItem("UsrInfo", JSON.stringify(aryUserInfo));
     displayRegionalWeather();
     $("#inputSearchLoc").val("");
+});
+
+$("#interestedWeather").on("click", ".delLocBtn", (event) => {
+    aryUserInfo.savedWeather.splice(aryUserInfo.savedWeather.indexOf(event.currentTarget.value), 1);
+    localStorage.removeItem("UsrInfo");
+    localStorage.setItem("UsrInfo", JSON.stringify(aryUserInfo));
+    displayRegionalWeather();
 });
