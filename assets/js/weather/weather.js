@@ -115,10 +115,10 @@ function displayRegionalWeather() {
 
                         $("#interestedWeather").append(`
                             <div class="columns mx-1">
-                                <i class="column is-one-quarter weather-icon">
+                                <i class="column weather-icon">
                                     <img src="${genIconURL(weatherData.weather[0].icon)}" height="100px" width="100px" alt="${weatherData.weather[0].description}">
                                 </i>
-                                <div class="column">
+                                <div class="column is-three-fifths">
                                     <div class="columns">
                                         <div class="column is-full">
                                             ${weatherData.name}
@@ -135,6 +135,13 @@ function displayRegionalWeather() {
                                         </div>
                                     </div>
                                 </div>
+                                <div class="column is-flex is-justify-content-center is-align-items-center">
+                                <button id="delLocBtn" class="button is-text">
+                                    <span class="icon is-small">
+                                    <i class="fas fa-minus-square"></i>
+                                    </span>
+                                </button>
+                                </div>
                             </div>
                         `);
                     })
@@ -148,8 +155,19 @@ function pgInitialize() {
     displayRegionalWeather();
 }
 
+pgInitialize();
+
 setInterval(()=> {
     pgInitialize();
 }, 300000);
 
-pgInitialize();
+$("#addLocBtn").on("click", (event) => {
+    aryUserInfo.savedWeather.unshift($("#inputSearchLoc").val());
+    if (aryUserInfo.savedWeather.length > 6) {
+        aryUserInfo.savedWeather.length = 6
+    }
+    localStorage.removeItem("UsrInfo");
+    localStorage.setItem("UsrInfo", JSON.stringify(aryUserInfo));
+    displayRegionalWeather();
+    $("#inputSearchLoc").val("");
+});

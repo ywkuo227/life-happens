@@ -46,13 +46,16 @@
         <div class="columns">
             <div class="column is-one-third box m-2">
                 Regional Weather
-                <div class="field">
-                    <p class="control has-icons-right">
-                        <input class="input" type="text" placeholder="Seattle">
-                        <span class="icon is-small is-right">
-                            <i class="fas fa-plus-square"></i>
+                <div class="field has-addons">
+                    <p class="control has-icons-left is-expanded">
+                        <input id="inputSearchLoc" class="input" type="text" placeholder="Seattle">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-search-location"></i>
                         </span>
                     </p>
+                    <div class="control">
+                        <a id="addLocBtn" class="button"><i class="fas fa-plus-square"></i></a>
+                    </div>
                 </div>
                 <div id="interestedWeather" class="mt-2 full-height scrollbox">
                 </div>
