@@ -37,3 +37,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.news-headline{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    
+}
