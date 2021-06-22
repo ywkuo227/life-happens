@@ -180,6 +180,9 @@ width: 80%;
      align-items: center;
      height: 100vh;
  }
+ .login a{
+     font-size: 30px;
+ }
 
 .userInfo {
     display: none;
