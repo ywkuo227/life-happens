@@ -21,35 +21,21 @@
             <div class="column"></div>
             <div class="column is-one-third welcome-msg">
                 <i class="mr-2">icon</i>
-                <p>Welcome Jessica</p>
+                <p>Welcome <span class="displayedName"></span></p>
             </div>
         </div>
-        <div class="columns ">
-            <div class="column daily-weather">
-                <i>
-                    <img src="https://openweathermap.org/img/w/01d.png" height="65px" width="65px" alt="">
-                </i>
-                <div class="mr-4">
-                    Seattle<br>
-                    Sunny - 64 F
-                </div>
-                <div class="mr-4">
-                    Wind:<br>
-                    Humidity:
-                </div>
-                <div>
-                    UV Index:
-                </div>
-            </div>
+        <div class="columns">
+            <div id="dispDailyWeather" class="column daily-weather"></div>
             <div class="column"></div>
             <div class="column is-one-third date-time">
                 <p class="date">Today is </p>
                 <p><span class="time-text-size time"></span></p>
             </div>
         </div>
+        </div>
         <div class="columns mb-5">
             <div class="column is-one-third">
-                Weather forecast
+                <div id="weekForecast" class="is-flex is-flex-direction-row is-justify-content-space-around"></div>
             </div>
             <div class="column"></div>
             <div class="column"></div>
@@ -57,12 +43,21 @@
     </header>
 
     <main>
-        <div class="columns" style="height: 500px;">
+        <div class="columns">
             <div class="column is-one-third box m-2">
                 Regional Weather
-                <div>
-                <input class="input" type="text" placeholder="Seattle">
-                <i class="fas fa-plus-square"></i>
+                <div class="field has-addons">
+                    <p class="control has-icons-left is-expanded">
+                        <input id="inputSearchLoc" class="input" type="text" placeholder="Seattle">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-search-location"></i>
+                        </span>
+                    </p>
+                    <div class="control">
+                        <a id="addLocBtn" class="button"><i class="fas fa-plus-square"></i></a>
+                    </div>
+                </div>
+                <div id="interestedWeather" class="mt-2 full-height scrollbox">
                 </div>
             </div>
             <!--To-do List Codes-->
@@ -73,7 +68,7 @@
                     <button type="submit" class="todo-button">
                         <i class="fas fa-plus-square"></i>
                     </button>
-<!--
+                    
                     <div class="select">
                         <select name="todos" class="select-todos">
                             <option value="total">List all</option>
@@ -81,7 +76,7 @@
                             <option value="in-progress">List In Progress</option>
                         </select>
                     </div>
-                -->
+               
                 </form>
                 <!--Elements created in Js goes in <div> below-->
                 <div class="todo-container">
@@ -97,9 +92,10 @@
                 </div>
                 <div class="box m-2" style="height: 70%;">
                     News
-                    <input id=headlines class="box m-2" style="height: 1%;" style="height: 60%;" placeholder="Article Title"><button> Search</button></input>
-                    
-                    
+                    <input id=headlines class="box m-2" style="height: 1%;" style="height: 60%;"
+                        placeholder="Article Title"><button> Search</button></input>
+
+
                 </div>
             </div>
         </div>
@@ -111,12 +107,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/weather/rsc.js"></script>
     <script src="./assets/js/news.js"> </script>
     <script src="./assets/js/DateTime.js"></script>
     <script src="./assets/js/Stock.js"></script>
-    
-
- 
+    <!-- Weather JS -->
+    <script src="./assets/js/weather/queryGen.js"></script>
+    <script src="./assets/js/weather/weather.js"></script>
     <!--Todo js-->
     <script src="./assets/js/todo.js"></script>
 </body>

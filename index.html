@@ -12,20 +12,30 @@
     <link rel="stylesheet" href="./assets/css/custom.css">
     <title>Welcome</title>
 </head>
-
 <body>
     <header class="columns">
-        <div class="column "></div>
+        <div class="column">
+            <button class="button editInfoBttn is-text has-text-white" style="margin: 5px; padding:0 1rem;">Edit User Information</button>
+        </div>
         <div class="column is-one-third m-2 date-time">
             <p class="date">Today is </p>
             <p><span class="time-text-size time"></span></p>
         </div>
     </header>
-    <main>
+    <main style="display: flex; flex-direction: column;">
         <div class="login">
             <i>icon</i>
-            <a href="./hub.html" class="button">Name</a>
+            <a href="./hub.html" class="button displayedName is-text has-text-white">Name</a>
         </div>
+        <form class="userInfo">
+            <label class="has-text-white">First Name:</label>
+            <input class="input" name="firstName" type="text">
+            <label class="has-text-white">Last Name:</label>
+            <input class="input" name="lastName" type="text">
+            <label class="has-text-white">Current City:</label>
+            <input class="input" name="city" type="text">
+            <submit class="button submitUserInfo mt-1">Submit</submit>
+        </form>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
