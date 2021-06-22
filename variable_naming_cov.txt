@@ -2,20 +2,21 @@
 
 
 //This is the array which will pass into Local Storage.
+//Name in local storage: UsrInfo
 var aryUserInfo = {
-    "userName": {
-    "firstName":
-    "lastName":
+    userName: {
+    firstName: "",
+    lastName: ""
     },
-    "location": {
-        "city":
-        "latitude":
-        "longtitude":
+    location: {
+        city: "",
+        latitude: "",
+        longtitude: ""
     },
-    "savedWeather": [
+    savedWeather: [
         (cityName)
     ],
-    "savedToDo": [
+    savedToDo: [
         (saved to-dos)
     ]
 }
