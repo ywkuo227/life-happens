@@ -5,6 +5,9 @@ var submitUserInfo = $(".submitUserInfo");
 var form = $(".userInfo");
 var displayedName = $(".displayedName");
 
+//icon
+var text
+
 //elements in user info arry
 var firstNameEl = $('input[name="firstName"]');
 var lastNameEl = $('input[name="lastName"]');
@@ -56,7 +59,8 @@ function saveUserInfo(event) {
     //set name (below icon) to first name
     console.log(aryUserInfo.userName.firstName);
     $(".displayedName").text(aryUserInfo.userName.firstName);
-
+    text = aryUserInfo.userName.firstName[0]+aryUserInfo.userName.lastName[0];
+    console.log(text);
 
     form.css("display", "none");
 };
@@ -72,6 +76,8 @@ console.log(JSON.parse(localStorage.getItem("UsrInfo")));
 if (JSON.parse(localStorage.getItem("UsrInfo")) == null) {
     editInfo();
 }
+
+
 
 editInfoBttn.on('click', editInfo);
 submitUserInfo.on('click', saveUserInfo);
