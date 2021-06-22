@@ -3,15 +3,17 @@ var dateEl = $(".date");
 var editInfoBttn = $(".editInfoBttn");
 var submitUserInfo = $(".submitUserInfo");
 var form = $(".userInfo");
+var displayedName = $(".displayedName");
 
+//elements in user info arry
 var firstNameEl = $('input[name="firstName"]');
 var lastNameEl = $('input[name="lastName"]');
 var cityEl = $('input[name="city"]');
 
 var aryUserInfo = {
     userName: {
-    firstName: "",
-    lastName: ""
+        firstName: "",
+        lastName: ""
     },
     location: {
         city: "",
@@ -36,26 +38,40 @@ function setDateTime() {
         timeEl.text(time);
     }, 1000);
 };
-function editInfo(){
+function editInfo() {
     console.log("you click edit user info");
     //display: block
     console.log(form);
-    form.css("display","block");
+    form.css("display", "block");
 }
 
-function saveUserInfo(event){
+function saveUserInfo(event) {
     //event.preventDefault();
     aryUserInfo.userName.firstName = firstNameEl.val();
     aryUserInfo.userName.lastName = lastNameEl.val();
     aryUserInfo.location.city = cityEl.val();
     console.log(aryUserInfo);
-    // stringify
-    // store
-    // refresh?
+    // stringify key: UsrInfo, stringify UsrInfoarry
+    localStorage.setItem("UsrInfo", JSON.stringify(aryUserInfo));
+    //set name (below icon) to first name
+    console.log(aryUserInfo.userName.firstName);
+    $(".displayedName").text(aryUserInfo.userName.firstName);
+
+
+    form.css("display", "none");
 };
 
 setDateTime();
 
-console.log(editInfoBttn)
+console.log(aryUserInfo.userName.firstName);
+if (JSON.parse(localStorage.getItem("UsrInfo")) !== null) {
+    displayedName.text(JSON.parse(localStorage.getItem("UsrInfo")).userName.firstName);
+}
+
+console.log(JSON.parse(localStorage.getItem("UsrInfo")));
+if (JSON.parse(localStorage.getItem("UsrInfo")) == null) {
+    editInfo();
+}
+
 editInfoBttn.on('click', editInfo);
 submitUserInfo.on('click', saveUserInfo);
