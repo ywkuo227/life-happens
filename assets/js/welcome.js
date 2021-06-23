@@ -53,7 +53,7 @@ function saveUserInfo(event) {
     event.preventDefault();
     console.log("you clicked submit");
     console.log("form first name: " + firstNameEl.val());
-    if (firstNameEl.val() == "") {
+    if (firstNameEl.val() == null) {
         console.log("first name null");
         location.reload();
     }
@@ -74,8 +74,6 @@ function saveUserInfo(event) {
     else {
         aryUserInfo.location.city = cityEl.val();
     }
-
-
     console.log("array updated");
     // stringify key: UsrInfo, stringify UsrInfoarry
     localStorage.setItem("UsrInfo", JSON.stringify(aryUserInfo));
@@ -116,7 +114,18 @@ else if (JSON.parse(localStorage.getItem("UsrInfo")).userName.firstName == "") {
     displayedName.css("display", "none");
     editInfo();
 }
-
+else if (JSON.parse(localStorage.getItem("UsrInfo")).userName.lastName == "") {
+    console.log("first name null "+JSON.parse(localStorage.getItem("UsrInfo")).userName.firstName);
+    icon.css("display", "none");
+    displayedName.css("display", "none");
+    editInfo();
+}
+else if (JSON.parse(localStorage.getItem("UsrInfo")).userName.city == "") {
+    console.log("first name null "+JSON.parse(localStorage.getItem("UsrInfo")).userName.firstName);
+    icon.css("display", "none");
+    displayedName.css("display", "none");
+    editInfo();
+}
 //create icon styling
 icon.css("padding", "10px");
 icon.css("background-color", "#61b69f");
