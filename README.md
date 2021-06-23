@@ -35,7 +35,7 @@ Feeling Unproductive? Todo list in this application gives you a structure and a 
  -API
 
 ## Authors
-Megan Ekse: login page, live date and time, personalized display with name and icon
+Megan Ekse: login page, live date and time, personalized display with name and icon.
 
 ## Contact Us
 
