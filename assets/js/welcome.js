@@ -4,6 +4,7 @@ var editInfoBttn = $(".editInfoBttn");
 var submitUserInfo = $(".submitUserInfo");
 var form = $(".userInfo");
 var displayedName = $(".displayedName");
+var icon = $(".userIcon");
 
 //icon
 var text
@@ -70,14 +71,20 @@ setDateTime();
 console.log(aryUserInfo.userName.firstName);
 if (JSON.parse(localStorage.getItem("UsrInfo")) !== null) {
     displayedName.text(JSON.parse(localStorage.getItem("UsrInfo")).userName.firstName);
+    text = JSON.parse(localStorage.getItem("UsrInfo")).userName.firstName[0]+JSON.parse(localStorage.getItem("UsrInfo")).userName.lastName[0];
+    console.log("userInfo not null"+text);
 }
 
 console.log(JSON.parse(localStorage.getItem("UsrInfo")));
 if (JSON.parse(localStorage.getItem("UsrInfo")) == null) {
     editInfo();
 }
-
-
+console.log(text);
+//create icon styling
+icon.text(text);
+icon.css("padding", "10px");
+icon.css("background-color", "#61b69f");
+icon.css("border-radius", "50px");
 
 editInfoBttn.on('click', editInfo);
 submitUserInfo.on('click', saveUserInfo);
