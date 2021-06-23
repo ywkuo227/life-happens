@@ -1,5 +1,8 @@
 var aryUserInfo = JSON.parse(localStorage.getItem("UsrInfo"));
 
+// Update and display the local weather and the forecast.
+// Append the info to the local weather UI.
+// This piece utilizes OpenWeather Weather API and One Call API.
 function displayLocalWeather() {
     fetch(genWeatherQueryURL(aryUserInfo.location.city))
         .then((response) => {
@@ -79,6 +82,9 @@ function displayLocalWeather() {
         })
 }
 
+// Update and display the place of interest weather.
+// Append the info to the regional weather UI.
+// This piece utilizes OpenWeather Weather API and One Call API.
 function displayRegionalWeather() {
     $("#interestedWeather").empty();
     for (i = 0; i < aryUserInfo.savedWeather.length; i++) {
@@ -149,18 +155,21 @@ function displayRegionalWeather() {
     }
 }
 
-// REMOVE BEFORE FLIGHT: pageInitialization
+// Render the weather information at page initialization.
 function pgInitialize() {
     displayLocalWeather();
     displayRegionalWeather();
 }
 
+// Call pageInitialization.
 pgInitialize();
 
+// Update all weather every 5 mins.
 setInterval(() => {
     pgInitialize();
 }, 300000);
 
+// Add a place of interested to the list of regional weather and Local Storage.
 $("#addLocBtn").on("click", () => {
     aryUserInfo.savedWeather.unshift($("#inputSearchLoc").val());
     if (aryUserInfo.savedWeather.length > 6) {
@@ -172,6 +181,7 @@ $("#addLocBtn").on("click", () => {
     $("#inputSearchLoc").val("");
 });
 
+// Delete a place of interest from regional weather UI and Local Storage.
 $("#interestedWeather").on("click", ".delLocBtn", (event) => {
     aryUserInfo.savedWeather.splice(aryUserInfo.savedWeather.indexOf(event.currentTarget.value), 1);
     localStorage.removeItem("UsrInfo");
