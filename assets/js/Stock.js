@@ -5,15 +5,10 @@ var stockTicker = document.getElementById("stockTicker")
 
 
 
-// //stockNews.out.printin(data.data)
 
-// var stock = [0, 1, 2]
-// for (var i = 0; i < stock.length; i++)
-
-//     stockNews.out.printin(i + "" + stock[i]);
 
 function stockMarket(){
-    fetch("http://api.marketstack.com/v1/eod/latest?access_key=bbb691e5ae8c59cd63c176ecacb21f80&symbols=AAPL,MSFT,TSLA,AMZN")
+    fetch("http://api.marketstack.com/v1/eod/latest?access_key=bbb691e5ae8c59cd63c176ecacb21f80&symbols=AAPL,MSFT")
     .then(response => {
         console.log(response)
         return response.json()
