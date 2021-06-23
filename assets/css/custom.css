@@ -46,11 +46,10 @@ input {
 .todo-button{
     border-radius: 0px 2px 2px 0px;
     cursor:pointer;
-   
 }
+
 .complete-button {
     cursor:pointer;
-
 }
 
 .trash-button {
@@ -97,11 +96,7 @@ width: 80%;
 .completed {
     opacity: 50%;
     text-decoration:line-through;
-
 }
-
-
-
 /*Todo Styling Ends Here*/
 
 .welcome-msg {
@@ -172,6 +167,7 @@ width: 80%;
     display: flex;
     flex-direction: column;
 }
+
 .login{
     display: flex;
     flex-direction: column;
@@ -193,4 +189,10 @@ width: 80%;
 
 .fa-plus-square:before {
     opacity: 20%;
+
+
+#displayheadline{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    
 }
