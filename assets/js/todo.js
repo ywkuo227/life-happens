@@ -1,5 +1,5 @@
-//Element Selectors
 var todoInputEl = document.querySelector(".todo-input");
+//Element Selectors
 var todoButtonEl = document.querySelector(".todo-button");
 var todoListEl = document.querySelector(".todo-list");
 var filterOption = document.querySelector(".select-todos");
@@ -13,6 +13,7 @@ filterOption.addEventListener("click", filterTodo);
 
 
 //Functions
+//Function to Add todo-items and to Generate todo item Elements
 function addTodos(event){
     event.preventDefault();
 
@@ -26,7 +27,6 @@ function addTodos(event){
     todoDivEl.appendChild(newTodoEl);
     saveLocalTodos(todoInputEl.value);
 
-    
     var completedButton = document.createElement("button");
     completedButton.innerHTML = '<i class= "fa fa-check-square"></i>';
     completedButton.classList.add("complete-button");
@@ -39,10 +39,9 @@ function addTodos(event){
 
     todoInputEl.value = "";
 
-
 }
 
-
+//Function to Check and Delete todo Items
 function deleteItem(event) {
 
     var item = event.target;
@@ -64,6 +63,7 @@ function deleteItem(event) {
 
 }
 
+//Function to Remove local-storage items
 function removeLocalTodos(todo) {
     let savedToDo;
     if (localStorage.getItem("savedToDo") === null) {
@@ -77,7 +77,7 @@ function removeLocalTodos(todo) {
   }
 
 
-
+//Function to Hold items in the Local Storage
   function saveLocalTodos(todo){
     let savedToDo;
     if(localStorage.getItem("savedToDo") === null){
@@ -90,6 +90,7 @@ function removeLocalTodos(todo) {
     
 }
 
+//Function to Implement Todo list items 
 function getTodos() {
     let savedToDo;
     if (localStorage.getItem("savedToDo") === null) {
@@ -120,9 +121,9 @@ function getTodos() {
       //attach final Todo
       todoListEl.appendChild(todoDivEl);
     });
-  }
+}
 
-
+//Function to Filter todo items as done, all, in progress
   function filterTodo(e) {
     const savedToDo = todoListEl.childNodes;
     savedToDo.forEach(function(todo) {
