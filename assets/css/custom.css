@@ -1,4 +1,9 @@
+html {
+    height: 100vh;
+}
+
 body {
+    min-height: 100vh;
     font-weight: 800;
     font-size: larger;
     color: #fff;
@@ -7,15 +12,137 @@ body {
     opacity: 90%;
 }
 
+/*Todo Styles*/
+/*Element Selectors*/
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,
+form button {
+    padding: 0.2em;
+    font-size: 1.5rem;
+    border: solid 0.5px white;
+    background-color: white;
+}
+ul button {
+    background:bottom;
+    border: solid 0.0px rgb(139, 115, 115);
+    font-size: 1rem;
+    padding: 0.2rem;
+}
+form button:hover {
+    background:cadetblue;
+}
+
+input {
+    border-radius: 2px 0 0 2px;
+    width: 70%;
+}
+
+/*Class Selectors*/
+.todo-button{
+    border-radius: 0px 2px 2px 0px;
+    cursor:pointer;
+   
+}
+.complete-button {
+    cursor:pointer;
+
+}
+
+.trash-button {
+    cursor: pointer;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+width: 80%;
+}
+
+.todo {
+    margin: 1rem;
+    padding: 0.2rem;
+    background: bottom;
+    border: solid 1px cadetblue;
+    background-color: white;
+    display: flex;
+    transition: all 0.3s ease;
+    justify-content: space-betweens;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.todo li {
+    flex:1;
+}
+.todo-item {
+    padding: 0 8px;
+}
+
+.select {
+    padding: 3px;
+}
+.select select {
+    font-size: smaller;
+}
+
+.completed {
+    opacity: 50%;
+    text-decoration:line-through;
+
+}
+
+
+
+/*Todo Styling Ends Here*/
+
 .welcome-msg {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
 
-.daily-weather {
-    display: flex;
-    flex-direction: row;
+.weather-icon {
+    text-align: center;
+}
+
+.uvi {
+    border-radius: 3px;
+}
+
+/* UVI bg color */
+.uvi-low {
+    background-color: rgba(0, 131, 1, 0.8);
+}
+
+.uvi-medium {
+    background-color: rgba(253, 255, 0, 0.8);
+    color: black;
+}
+
+.uvi-high {
+    background-color: rgba(255, 161, 0, 0.8);
+    color: black;
+}
+
+.uvi-very-high {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.uvi-extreme {
+    background-color: rgba(141, 0, 132, 0.8);
+}
+
+.forecastContent {
+    text-align: center;
 }
 
 .date-time {
@@ -26,11 +153,19 @@ body {
 }
 
 .time-text-size {
-    font-size: 36px;
+    font-size: 45px;
+}
+
+.full-height {
+    height: calc(100vh - 448px);
 }
 
 .box {
     background-color: rgba(255, 255, 255, 0.7);
+}
+
+.scrollbox {
+    overflow: auto;
 }
 
 .stock-news {
@@ -38,8 +173,8 @@ body {
     flex-direction: column;
 }
 
-.news-headline{
+#displayheadline{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
+    font-size: medium;
     
 }

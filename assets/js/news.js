@@ -6,10 +6,10 @@ function displayNews() {
       return response.json();
     })
     .then((data) => {
-      console.log(data.articles[0])
+      
       for (var i = 0; i < 9; i++) {
         $("#displayheadline").append(`
-            <a href="${data.articles[i].url} class="news-headlines">${data.articles[i].title}</a>
+            <li><a href="${data.articles[i].url} class="news-headlines">${data.articles[i].title}</a></li>
           `)
         
       }
