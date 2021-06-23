@@ -45,46 +45,50 @@ function setDateTime() {
 function editInfo() {
     console.log("you click edit user info");
     //display: block
-    console.log(form);
     form.css("display", "block");
 }
 
 function saveUserInfo(event) {
-    //event.preventDefault();
+    event.preventDefault();
+    console.log("you clicked submit");
     aryUserInfo.userName.firstName = firstNameEl.val();
     aryUserInfo.userName.lastName = lastNameEl.val();
     aryUserInfo.location.city = cityEl.val();
-    console.log(aryUserInfo);
+    console.log("array updated");
     // stringify key: UsrInfo, stringify UsrInfoarry
     localStorage.setItem("UsrInfo", JSON.stringify(aryUserInfo));
     //set name (below icon) to first name
-    console.log(aryUserInfo.userName.firstName);
+    //console.log(aryUserInfo.userName.firstName);
     $(".displayedName").text(aryUserInfo.userName.firstName);
     text = aryUserInfo.userName.firstName[0]+aryUserInfo.userName.lastName[0];
-    console.log(text);
-
+    console.log("save user info: " +text);
+    icon.text(text);
     form.css("display", "none");
 };
 
 setDateTime();
 
-console.log(aryUserInfo.userName.firstName);
+//console.log(aryUserInfo.userName.firstName);
 if (JSON.parse(localStorage.getItem("UsrInfo")) !== null) {
     displayedName.text(JSON.parse(localStorage.getItem("UsrInfo")).userName.firstName);
     text = JSON.parse(localStorage.getItem("UsrInfo")).userName.firstName[0]+JSON.parse(localStorage.getItem("UsrInfo")).userName.lastName[0];
-    console.log("userInfo not null"+text);
-}
+    icon.text(text);
+    console.log("userInfo not null "+text);
+};
 
-console.log(JSON.parse(localStorage.getItem("UsrInfo")));
+//console.log(JSON.parse(localStorage.getItem("UsrInfo")));
 if (JSON.parse(localStorage.getItem("UsrInfo")) == null) {
     editInfo();
-}
-console.log(text);
+};
+
 //create icon styling
-icon.text(text);
 icon.css("padding", "10px");
 icon.css("background-color", "#61b69f");
 icon.css("border-radius", "50px");
 
 editInfoBttn.on('click', editInfo);
-submitUserInfo.on('click', saveUserInfo);
+//submitUserInfo.on('click', saveUserInfo(event));
+submitUserInfo.on('click', (event)=>{
+    event.preventDefault();    
+    saveUserInfo(event);
+});

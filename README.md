@@ -11,7 +11,7 @@ Feeling Unproductive? Todo list in this application gives you a structure and a 
 
 ## Screenshot
 
-![life-happens]()
+![life-happens](./assets/img/loginScreenshot.png)
 ![life-happens]()
 ![life-happens]()
 
@@ -35,12 +35,13 @@ Feeling Unproductive? Todo list in this application gives you a structure and a 
  -API
 
 ## Authors
+Megan Ekse: login page, live date and time, personalized display with name and icon
 
 ## Contact Us
 
 For any question about the project, please contact us.
 [BanuAyozturk](mailto:bnyksl@gmail.com)
-[MeganEkse](mailto:)
+[MeganEkse](mailto:meganekse@gmail.com)
 [WilliamKuo](mailto:)
 [JeffLynch](mailto:)
 [KelebetEngida](mailto:)
