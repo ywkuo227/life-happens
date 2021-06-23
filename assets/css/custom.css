@@ -152,7 +152,7 @@ width: 80%;
 }
 
 .full-height {
-    height: calc(100vh - 448px);
+    height: calc(100vh - 456px);
 }
 
 .box {
@@ -162,13 +162,6 @@ width: 80%;
 .scrollbox {
     overflow: auto;
 }
-
-/* .stock-news {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: stretch;
-} */
 
 .login{
     display: flex;
