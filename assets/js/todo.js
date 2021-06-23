@@ -3,6 +3,7 @@ var todoInputEl = document.querySelector(".todo-input");
 var todoButtonEl = document.querySelector(".todo-button");
 var todoListEl = document.querySelector(".todo-list");
 var filterOption = document.querySelector(".select-todos");
+var aryUserInfo = JSON.parse(localStorage.getItem("UsrInfo"));
 
 
 //Event Listeners
@@ -66,14 +67,14 @@ function deleteItem(event) {
 //Function to Remove local-storage items
 function removeLocalTodos(todo) {
     let savedToDo;
-    if (localStorage.getItem("savedToDo") === null) {
+    if (aryUserInfo.savedToDo === null) {
         savedToDo = [];
     } else {
-        savedToDo = JSON.parse(localStorage.getItem("savedToDo"));
+        savedToDo = aryUserInfo.savedToDo;
     }
     const todoIndex = todo.children[0].innerText;
-    savedToDo.splice(savedToDo.indexOf(todoIndex), 1);
-    localStorage.setItem("savedToDo", JSON.stringify(savedToDo));
+    aryUserInfo.savedToDo.splice(savedToDo.indexOf(todoIndex), 1);
+    localStorage.setItem("UsrInfo", JSON.stringify(aryUserInfo));
   }
 
 
@@ -85,18 +86,18 @@ function removeLocalTodos(todo) {
     }else {
         savedToDo= JSON.parse(localStorage.getItem("savedToDo"));
     }
-    savedToDo.push(todo);
-    localStorage.setItem("savedToDo",JSON.stringify(savedToDo));
+    aryUserInfo.savedToDo.push(todo);
+    localStorage.setItem("UsrInfo",JSON.stringify(aryUserInfo));
     
 }
 
 //Function to Implement Todo list items 
 function getTodos() {
     let savedToDo;
-    if (localStorage.getItem("savedToDo") === null) {
+    if (aryUserInfo.savedToDo === null) {
         savedToDo = [];
     } else {
-        savedToDo = JSON.parse(localStorage.getItem("savedToDo"));
+        savedToDo = aryUserInfo.savedToDo;
     }
     savedToDo.forEach(function(todo) {
       //Create todo div
