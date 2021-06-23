@@ -1,5 +1,5 @@
-//Element Selectors
 var todoInputEl = document.querySelector(".todo-input");
+//Element Selectors
 var todoButtonEl = document.querySelector(".todo-button");
 var todoListEl = document.querySelector(".todo-list");
 var filterOption = document.querySelector(".select-todos");
