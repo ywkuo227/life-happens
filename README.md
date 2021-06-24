@@ -1,7 +1,7 @@
 
 # life-happens
 
-## Deployed Application:
+## Deployed Application: https://ywkuo227.github.io/life-happens/
 
 ## Description: 
 
@@ -65,6 +65,6 @@ Weather section displays the current weather .Also an input allows the user to s
 
 [WilliamKuo](mailto:ywkuo@outlook.com)
 
-[JeffLynch](mailto:)
+[JeffLynch](mailto:kingami34@gmail.com)
 
 [KelebetEngida](mailto:engidk@uw.edu)
