@@ -9,7 +9,7 @@ function displayNews() {
       
       for (var i = 0; i < 9; i++) {
         $("#displayheadline").append(`
-            <li><a href="${data.articles[i].url} class="news-headlines">${data.articles[i].title}</a></li>
+            <div><a href="${data.articles[i].url} class="news-headlines">${data.articles[i].title}</a></div>
           `)
         
       }
